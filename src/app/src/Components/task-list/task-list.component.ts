@@ -12,7 +12,8 @@ import { TaskModalComponent } from '../task-modal/task-modal.component';
   selector: 'app-task-list',
   imports: [TaskComponent,NgFor,MatDialogModule,MatIconModule],
   templateUrl: './task-list.component.html',
-  styleUrl: './task-list.component.scss'
+  styleUrl: './task-list.component.scss',
+  standalone: true,
 })
 export class TaskListComponent {
   tasks: Task[] = [];

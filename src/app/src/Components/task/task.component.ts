@@ -13,7 +13,8 @@ import { TaskModalComponent } from '../task-modal/task-modal.component';
   imports: [MatIconModule, MatButtonModule, MatCheckboxModule, MatDialogModule],
   templateUrl: './task.component.html',
   styleUrl: './task.component.scss',
-  providers: [DatePipe]
+  providers: [DatePipe],
+  standalone: true,
 })
 export class TaskComponent {
   @Input() task: Task = {
