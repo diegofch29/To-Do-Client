@@ -9,6 +9,11 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 ```sh
 git clone https://github.com/diegofch29/To-Do-Client
 ```
+2. Navigate to the project:
+
+```sh
+cd To-Do-Client
+```
 
 ## Development server
 
