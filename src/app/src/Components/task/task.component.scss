@@ -1,0 +1,84 @@
+@import "../../../../styles.scss";
+
+.task-cotainer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 10px;
+
+  .task-header {
+    color: $accent-color;
+    margin-bottom: 1rem;
+
+    h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+  }
+
+  .task-body {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 1rem;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    p {
+      margin: 0;
+    }
+
+    .task-actions {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: flex-end;
+
+      .chk {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+
+        &.chk-danger {
+          accent-color: $success-color;
+
+          &:checked {
+            background-color: $success-color;
+          }
+        }
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        border: 1px solid $border-color;
+        cursor: pointer;
+        background-color: $background-color;
+        color: $text-color;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background-color: $hover-color;
+          color: $background-color;
+        }
+
+        &.delete {
+          border-color: $error-color;
+          &:hover {
+            background-color: $error-color;
+          }
+        }
+
+        &.complete {
+          border-color: $success-color;
+          &:hover {
+            background-color: $success-color;
+          }
+        }
+      }
+    }
+  }
+}

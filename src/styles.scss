@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+// Vintage Color Palette Variables
+$vintage-cream: #f2e8cf;
+$vintage-sage: #a7b5a2;
+$vintage-rust: #bc6c25;
+$vintage-navy: #2f4858;
+$vintage-burgundy: #8b4c55;
+$vintage-dusty-blue: #7d98a1;
+$vintage-olive: #5f6f52;
+$vintage-rose: #d4a5a5;
+
+// Functional Color Variables
+$primary-color: $vintage-navy;
+$secondary-color: $vintage-sage;
+$accent-color: $vintage-rust;
+$background-color: $vintage-cream;
+$text-color: $vintage-navy;
+$border-color: $vintage-dusty-blue;
+$hover-color: $vintage-burgundy;
+$success-color: $vintage-olive;
+$error-color: $vintage-rust;
+
+* {
+  font-family: "Georgia";
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+.delete-icon {
+  font-family: "Material Icons";
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}

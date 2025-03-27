@@ -1,0 +1,21 @@
+@import "../../../../styles.scss";
+
+:host {
+  display: block;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 350px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-dialog-actions {
+  margin-top: 20px;
+}
