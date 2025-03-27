@@ -7,7 +7,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 1. Clone the repository:
 
 ```sh
-git clone https://github.com/diegofch29/To-Do-API
+git clone https://github.com/diegofch29/To-Do-Client
 ```
 
 ## Development server
