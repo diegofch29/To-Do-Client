@@ -1,12 +1,12 @@
-import { Component, Input } from '@angular/core';
-import { ITask as Task} from '../../ITask';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ITask as Task } from '../../Models/ITask';
 import { DatePipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import { TaskService } from '../../../../Services/task-service.service';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { TaskModalComponent } from '../task-modal/task-modal.component';
+import { TaskService } from '../../Services/TaskService/task-service.service';
 
 @Component({
   selector: 'app-task',
@@ -22,24 +22,25 @@ export class TaskComponent {
     title: '',
     isCompleted: false,
   };
+  @Output() taskChanged = new EventEmitter<void>();
   constructor(private taskService: TaskService, private dialog: MatDialog) {}
-
-  
 
   formatDate(date: Date) {
     return new DatePipe('en-US').transform(date, 'short');
   }
-  
+
   onEdit() {
     const dialogRef = this.dialog.open(TaskModalComponent, {
-      data: { task: this.task, isEdit: true }
+      data: { task: this.task, isEdit: true },
     });
-  
-    dialogRef.afterClosed().subscribe(result => {
+
+    dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        this.taskService.updateTask(this.task.id, { ...this.task, ...result })
-          .subscribe(updatedTask => {
+        this.taskService
+          .updateTask(this.task.id, { ...this.task, ...result })
+          .subscribe((updatedTask) => {
             Object.assign(this.task, updatedTask);
+            this.taskChanged.emit();
           });
       }
     });
@@ -47,12 +48,16 @@ export class TaskComponent {
 
   onDelete() {
     this.taskService.deleteTask(this.task.id).subscribe(() => {
+      this.taskChanged.emit();
     });
   }
 
   onComplete() {
-    this.taskService.updateTask(this.task.id, {...this.task, isCompleted: true }).subscribe(() => {
-      this.task.isCompleted = true;
-    });
+    this.taskService
+      .updateTask(this.task.id, { ...this.task, isCompleted: true })
+      .subscribe(() => {
+        this.task.isCompleted = true;
+        this.taskChanged.emit();
+      });
   }
 }

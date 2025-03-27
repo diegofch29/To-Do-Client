@@ -5,9 +5,15 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideNativeDateAdapter } from '@angular/material/core';
 
 export const environment = {
-  apiUrl: 'https://to-do-api-fjb5f4e4apcqf3dd.canadacentral-01.azurewebsites.net'
+  apiUrl:
+    'https://to-do-api-fjb5f4e4apcqf3dd.canadacentral-01.azurewebsites.net',
 };
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),provideHttpClient(),provideNativeDateAdapter() ]
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+    provideHttpClient(),
+    provideNativeDateAdapter(),
+  ],
 };

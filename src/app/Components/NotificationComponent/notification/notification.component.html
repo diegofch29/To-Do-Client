@@ -1,0 +1,11 @@
+<div class="notification-container" [ngClass]="data.panelClass">
+  <span class="message">{{ data.message }}</span>
+  <button mat-icon-button (click)="data.closeSnackbar()">
+    <mat-icon
+      class="delete-icon"
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="close"
+    ></mat-icon>
+  </button>
+</div>

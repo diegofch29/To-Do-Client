@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TaskComponent } from './task.component';
-import { TaskService } from '../../../../Services/task-service.service';
+import { TaskService } from '../Services/TaskService/task-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { of } from 'rxjs';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';

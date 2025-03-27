@@ -1,0 +1,31 @@
+@import "../../../../styles.scss";
+
+.notification-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.message {
+  margin-right: 8px;
+}
+
+:host ::ng-deep {
+  .success-snackbar {
+    background-color: $success-color !important;
+    color: $background-color !important;
+  }
+
+  .error-snackbar {
+    background-color: $error-color !important;
+    color: $background-color !important;
+  }
+
+  .info-snackbar {
+    background-color: $vintage-dusty-blue !important;
+    color: $background-color !important;
+  }
+}

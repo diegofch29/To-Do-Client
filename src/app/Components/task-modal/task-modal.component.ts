@@ -7,7 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ITask } from '../../ITask';
+import { ITask as Task} from '../../Models/ITask';
 
 @Component({
   selector: 'app-task-modal',
@@ -32,7 +32,7 @@ export class TaskModalComponent {
   constructor(
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<TaskModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { task?: ITask, isEdit: boolean }
+    @Inject(MAT_DIALOG_DATA) public data: { task?: Task, isEdit: boolean }
   ) {
     this.modalTitle = data.isEdit ? 'Edit Task' : 'Add New Task';
     this.taskForm = this.fb.group({

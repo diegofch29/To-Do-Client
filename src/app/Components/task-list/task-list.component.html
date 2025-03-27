@@ -1,0 +1,21 @@
+<div class="task-list-container">
+  <button
+    mat-raised-button
+    color="primary"
+    class="btn btn-add"
+    (click)="createTask()"
+  >
+    <mat-icon
+      class="delete-icon"
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="add"
+    ></mat-icon>
+    Add New Task
+  </button>
+  <app-task
+    *ngFor="let task of tasks"
+    [task]="task"
+    (taskChanged)="getTasks()"
+  ></app-task>
+</div>
